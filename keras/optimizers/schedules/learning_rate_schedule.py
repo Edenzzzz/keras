@@ -576,8 +576,7 @@ class InverseTimeDecay(LearningRateSchedule):
 
 
 @keras_export(
-    "keras.optimizers.schedules.MultiStepLR",
-    "keras.optimizers.MultiStepLR"
+    "keras.optimizers.schedules.MultiStepLR", "keras.optimizers.MultiStepLR"
 )
 class MultiStepLR(tf.keras.optimizers.schedules.LearningRateSchedule):
     """
@@ -603,6 +602,7 @@ class MultiStepLR(tf.keras.optimizers.schedules.LearningRateSchedule):
     ```
 
     """
+
     def __init__(self, lr, steps_per_epoch, milestones, gamma):
         self.lr = lr
         self.epoch = 0
@@ -631,8 +631,7 @@ class MultiStepLR(tf.keras.optimizers.schedules.LearningRateSchedule):
 
 
 @keras_export(
-    "keras.optimizers.schedules.CosineDecay",
-    "keras.optimizers.CosineDecay"
+    "keras.optimizers.schedules.CosineDecay", "keras.optimizers.CosineDecay"
 )
 class CosineDecay(tf.keras.optimizers.schedules.LearningRateSchedule):
     """A LearningRateSchedule that uses a cosine decay schedule.
@@ -677,8 +676,12 @@ class CosineDecay(tf.keras.optimizers.schedules.LearningRateSchedule):
     """
 
     def __init__(
-        self, initial_learning_rate, decay_steps, steps_per_epoch=None,
-            alpha=0.0, name=None
+        self,
+        initial_learning_rate,
+        decay_steps,
+        steps_per_epoch=None,
+        alpha=0.0,
+        name=None,
     ):
         """Applies cosine decay to the learning rate.
         Args:
